@@ -1,0 +1,48 @@
+<%layout("/layouts/boilerplate") %>
+<body>
+    <div class="row mt-3">
+        <div class="col-8 offset-2">
+            <br><br>
+    <h3>Edit the Details</h3>
+    <br>
+    <form method="POST" action="/listings/<%=info._id%>?_method=PUT" novalidate class="needs-validation">
+        <div class="mb-3">
+    <p><%=info.title%></p>
+    </div>
+    <div class="mb-3">
+        <lable for="description" class="form-label">Description</lable>
+    <textarea name="description"  class="form-control" value="<%=info.description%>" required></textarea>
+    <div class="invalid-feedback">Enter a short description</div>
+    
+    </div>
+    <div class="mb-3">
+        <lable for="image" class="form-label">Image URL </lable>
+    <input name="image"  class="form-control"value="<%=info.image%>" required>
+
+    </div>
+    <div class="row ">
+    <div class="mb-3 col-md-4">
+        <lable for="price" class="form-label">Price</lable>
+        <input class="form-control" name="price" value="<%=info.price%>" required>
+        <div class="invalid-feedback">Enter a valid price</div>
+       </div>
+       <div class="mb-3 col-md-4">
+        <lable for="location" class="form-label">Location</lable>
+        <input name="location"  class="form-control"value="<%=info.location%>" required>
+        <div class="invalid-feedback">Enter a valid location</div>
+
+        </div>
+    </div>
+    <div class="mb-3">
+        <lable for="country" class="form-label">Country</lable>
+        <input name="country"  class="form-control"value="<%=info.country%>" required>
+        <div class="invalid-feedback">Enter a valid country</div>
+       </div>
+       <br>
+       <br>
+    <button  class="btn btn-dark add-btn">Edit</button>
+</form>
+</div>
+</div>
+</body>
+
